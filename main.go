@@ -70,6 +70,8 @@ func main() {
 	log.Printf("[INFO] Version %s starting", version)
 	log.Printf("[INFO] Go runtime is %s", runtime.Version())
 
+	WarnIfRunAsRoot(cfg.Insecure)
+
 	// setup profiling if enabled
 	var prof interface {
 		Stop()
